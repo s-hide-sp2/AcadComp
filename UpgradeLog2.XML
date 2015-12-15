@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AcadComp">
+</Property><Property Name="ソリューション ファイル" Value="C:\再販ツール2010対応\図面比較ツール\開発環境\x64\AcadComp\AcadComp.sln">
+</Property><Property Name="Date" Value="2009年10月21日">
+</Property><Property Name="Time" Value="11:15">
+</Property><Property Name="ログ番号" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="AcadComp" Source="AcadComp.vcproj" Description="ローカルの IIS サーバーへの Web 配置はサポートされなくなりました。Web 配置ビルド ツールはプロジェクト設定から削除されました。">
+</Event><Event ErrorLevel="1" Project="AcadComp" Source="AcadComp.vcproj" Description="このアプリケーションは、Windows Vista のユーザー アカウント制御 (UAC) 機能に関連する設定を含むように更新されました。既定で、UAC を有効にして Windows Vista 上でアプリケーションを実行すると、起動したプロセスと同じ特権で実行するようにマークされます。このマークによって、アプリケーションの仮想化による実行も無効になります。プロジェクトのプロパティ ページから UAC 関連の設定を変更できます。">
+</Event><Event ErrorLevel="0" Project="AcadComp" Source="AcadComp.vcproj" Description="プロジェクトは正常にアップグレードされました。">
+</Event><Event ErrorLevel="3" Project="AcadComp" Source="AcadComp.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AcadComp.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="AcadComp.sln" Description="Converted">
+</Event></UpgradeLog>

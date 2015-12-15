@@ -1,0 +1,163 @@
+
+
+ﾌｪｲﾀﾙ ｴﾗｰ:  ｾｷｭﾘﾃｨ ｼｽﾃﾑ (ｿﾌﾄｳｪｱ ﾛｯｸ ﾗｲｾﾝｽ管理)
+が機能していないか, 適切にｲﾝｽﾄｰﾙされていません.
+
+02/13/2004 at 10:17:53.062  図面: 
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\ObjectDbx\DB\IMP\src\dbobji.cpp@5619: eNotOpenForWrite
+
+02/23/2004 at 14:46:48.163  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\ObjectDbx\DB\IMP\src\dbutil.cpp@843: eWasOpenForRead
+
+03/01/2004 at 11:23:31.843  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\ObjectDbx\DB\IMP\src\dbutil.cpp@843: eLockViolation
+
+03/01/2004 at 14:16:26.889  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\ObjectDbx\DB\IMP\src\dbutil.cpp@843: eLockViolation
+
+03/01/2004 at 14:23:13.311  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForRead
+
+03/01/2004 at 14:34:05.764  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForRead
+
+03/01/2004 at 14:37:21.296  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForRead
+
+03/01/2004 at 14:44:40.452  図面: Drawing2.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForWrite
+
+03/01/2004 at 14:46:39.124  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForWrite
+
+03/01/2004 at 16:34:40.374  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForRead
+
+03/01/2004 at 16:36:01.264  図面: Drawing1.dwg
+-------------
+
+
+ｲﾝﾀｰﾅﾙ ｴﾗｰ:  !U:\global\src\coreacad\CORESRC\scandr.cpp@2022: eWasOpenForRead
+
+03/01/2004 at 17:23:58.436  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 19:39:50.515  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 19:44:23.953  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 19:45:52.906  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 19:47:26.484  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 19:49:25.562  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 19:51:24.140  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 20:26:54.625  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/24/2006 at 20:31:37.093  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/27/2006 at 10:42:59.046  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/27/2006 at 10:45:39.765  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled e06d7363h Exception at 7c81eb33h
+
+07/27/2006 at 10:54:46.687  図面: Drawing1.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled Access Violation Writing 0x5ccc0004 Exception at 78135586h
+
+08/09/2006 at 16:26:09.809  図面: C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\AcadComp\test02.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled Access Violation Writing 0xaa761cde Exception at 78135630h
+
+08/10/2006 at 14:47:56.779  図面: C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\AcadComp\test02.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled Access Violation Writing 0x48e40004 Exception at 781354dch
+
+08/10/2006 at 15:14:22.518  図面: C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\AcadComp\test02.dwg
+-------------
+
+
+フェイタル エラー:  Unhandled Access Violation Reading 0x0a60 Exception at 408fdba1h
+
+09/18/2008 at 13:29:37.123  図面: C:\Projects\AcadComp\test01.dwg
+-------------

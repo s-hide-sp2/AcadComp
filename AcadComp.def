@@ -1,0 +1,7 @@
+
+LIBRARY      "DAAAcadComp"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

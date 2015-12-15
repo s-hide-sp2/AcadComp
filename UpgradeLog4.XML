@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AcadComp">
+</Property><Property Name="ソリューション ファイル" Value="C:\usr\hasio\job\中日本\2013年開発\図面比較ソース　城北依頼分\x64\AcadComp\AcadComp.sln">
+</Property><Property Name="Date" Value="2013年4月22日">
+</Property><Property Name="Time" Value="10:45">
+</Property><Property Name="ログ番号" Value="4">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AcadComp.sln" Description="ファイルは正常に C:\usr\hasio\job\中日本\2013年開発\図面比較ソース　城北依頼分\x64\AcadComp\AcadComp.sln.old としてバックアップされました。">
+</Event><Event ErrorLevel="2" Project="C:\usr\hasio\job\中日本\2013年開発\図面比較ソース　城北依頼分\x64\AcadComp\AcadComp.vcxproj" Source="AcadComp" Description="プロジェクト ファイルが破損しているためプロジェクトを読み込めません。">
+</Event><Event ErrorLevel="2" Project="AcadComp" Source="AcadComp.vcxproj" Description="プロジェクトはアップグレードに失敗しました。">
+</Event><Event ErrorLevel="3" Project="AcadComp" Source="AcadComp.vcxproj" Description="未変換">
+</Event><Event ErrorLevel="0" Project="" Source="AcadComp.sln" Description="ソリューション ファイルは変換の必要がありません。">
+</Event><Event ErrorLevel="3" Project="" Source="AcadComp.sln" Description="変換の必要はありません">
+</Event></UpgradeLog>

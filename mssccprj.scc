@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[AcadComp.dsp]
+SCC_Aux_Path = "\\sadb1\vss$\"
+SCC_Project_Name = "$/AcadComp", IBJDAAAA
+
+[AcadComp.sln]
+SCC_Aux_Path = "\\sadb1\vss$\"
+SCC_Project_Name = "$/AcadComp", IBJDAAAA
