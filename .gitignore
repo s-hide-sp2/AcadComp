@@ -1,0 +1,27 @@
+
+# /
+/*.user
+/*.suo
+/*.project
+/*.ncb
+/*.opt
+/*.cdtproject
+/*.sbr
+/*.suo
+/*.sdf
+/*.msi
+/ipch
+
+#/Debug/
+/Debug/*
+/AcadComp/Debug/*
+/x64/Debug/
+
+#/Release/
+/Release/*
+/AcadComp/Release/*
+/x64/Release/
+
+# /HistoricalDataConverter
+/AcadComp/AcadComp.vcxproj.user
+
