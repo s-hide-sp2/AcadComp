@@ -1,0 +1,12 @@
+// 図面内要素のObjectID取得
+ACDocManager::GetDwgAllEntityIds
+
+
+// 図面内要素のObjectID取得
+ACDocManager::GetDwgAllEntityIds
+
+// ACCompBase
+ACCompEntitiesGeom クラスの基底クラス
+
+// エンティティ比較
+ACCompEntitiesGeom::CompareEntityGeoms(AcDbEntity *pEnt1, AcDbEntity *pEnt2)

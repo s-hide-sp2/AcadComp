@@ -1,8 +1,13 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by AcadComp.rc
 //
 #define IDS_PROJNAME                    100
+#define IDS_FAIL_TO_READ_DWG            101
+#define IDS_FAIL_TO_GET_ID              102
+#define IDS_FAIL_TO_COMPARE_DWG         103
+#define IDS_FAIL_TO_COMPOUND_DWG        104
+#define IDS_ONLY_EXIST_NEW_DWG_FOLDER   105
 #define IDC_LIST_GRID                   200
 #define IDD_DLG_COMP                    200
 #define IDC_CBO_DWG_LIST1               201

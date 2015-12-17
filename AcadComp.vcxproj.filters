@@ -111,6 +111,21 @@
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="zfcComparetor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zfcUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zfcLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zfcCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zfcCmdCompareDwgInFolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="AcadComp.def">
@@ -236,6 +251,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdArx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcComparetor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcUtility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcTypeDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdZfc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcCmdCompareDwgInFolder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
