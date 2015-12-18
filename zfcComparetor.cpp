@@ -25,7 +25,6 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 	acd::objectIdContainer conObjectIdNew;
 	ResultCompEntity resultCompEntity;
 	ACDocManager docManager;
-	CString strLog;
 
 	//	VE‹Œ}–Ê“Ç‚Ýž‚Ý
 	bResult = readDwg( pDbOld, strPathOldDwg );
@@ -43,9 +42,14 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 		resultCompEntity.SetHashTableSize( conObjectIdOld.GetCount() + conObjectIdNew.GetCount() );
 		bResult = docManager.CompDwgs( conObjectIdOld, conObjectIdNew, resultCompEntity );
 		
-		if( !bResult ){
-			AfxFormatString2( strLog, IDS_FAIL_TO_COMPARE_DWG, strPathOldDwg, strPathNewDwg );
-			zfcLogger::instance().write( _T("\n%s"), strLog );
+		if( bResult ){
+			if( resultCompEntity.GetCount() == 0 )
+				zfcUtility::writeLog2( IDS_CORRESPOND, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
+			else
+				zfcUtility::writeLog2( IDS_DISCORD, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
+		}
+		else{
+			zfcUtility::writeLog2( IDS_FAIL_TO_COMPARE_DWG, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
 		}
 	}
 	
@@ -54,8 +58,7 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 		bResult = docManager.DrawResultDwg(pDbNew->blockTableId(), pDbOld->blockTableId(), resultCompEntity, conObjectIdNew);
 
 		if( !bResult ){
-			AfxFormatString2( strLog, IDS_FAIL_TO_COMPOUND_DWG, strPathOldDwg, strPathNewDwg );
-			zfcLogger::instance().write( _T("\n%s"), strLog );
+			zfcUtility::writeLog2( IDS_FAIL_TO_COMPOUND_DWG, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
 		}
 	}
 
@@ -71,10 +74,7 @@ bool zfcComparetor::readDwg( AcDbDatabase*& pDb, const CString& strPath ) const
 	auto es = zfcUtility::readDwg( pDb, strPath );
 
 	if( Acad::eOk != es ){
-		CString str;
-
-		AfxFormatString1( str, IDS_FAIL_TO_READ_DWG, strPath );
-		zfcLogger::instance().write( _T("\n%s"), str );
+		zfcUtility::writeLog1( IDS_FAIL_TO_READ_DWG, strPath );
 		bResult = false;
 	}
 	
@@ -87,11 +87,8 @@ bool zfcComparetor::getAllObjectId( acd::objectIdContainer& conObjectId, AcDbDat
 	auto es = zfcUtility::getAllObjectId( conObjectId, pDb );
 
 	if( Acad::eOk != es ){
-		CString str;
-
 		// todo API’²¸
-		AfxFormatString1( str, IDS_FAIL_TO_GET_ID, pDb->document()->title() );
-		zfcLogger::instance().write( _T("\n%s"), str );
+		zfcUtility::writeLog1( IDS_FAIL_TO_GET_ID, pDb->document()->title() );
 		bResult = false;
 	}
 	
