@@ -22,6 +22,18 @@ public:
 	//	ファイルパスを返す
 	static CString filePath( const CString& strFolderPath, const CString& strFileName, const CString& strExt = _T("") );
 
+	//	ログ出力する
+	static void writeLog1( int nResourceId, const CString& strFmt1 );
+
+	//	ログ出力する
+	static void writeLog2( int nResourceId, const CString& strFmt1, const CString& strFmt2 );
+
+	//	ファイル名をログ出力出力する
+	static void writeFileName( const zfc::pathContainer& conPath );
+
+	//	ファイルパスからファイル名を返す
+	static CString fileName( const CString& strPath );
+
 protected:
 
 	zfcUtility(void);

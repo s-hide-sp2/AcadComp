@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "zfcUtility.h"
-
+#include "zfcLogger.h"
 
 zfcUtility::zfcUtility(void)
 {
@@ -11,7 +11,7 @@ zfcUtility::~zfcUtility(void)
 {
 }
 
-static Acad::ErrorStatus readDwg( AcDbDatabase*& pDb, const CString& strPath )
+Acad::ErrorStatus zfcUtility::readDwg( AcDbDatabase*& pDb, const CString& strPath )
 {
 	Acad::ErrorStatus es = Acad::eOk;
 	//todo API調査
@@ -162,3 +162,43 @@ CString zfcUtility::filePath( const CString& strFolderPath, const CString& strFi
 
 	return szPath;
 }
+
+//	ログ出力する
+void zfcUtility::writeLog1( int nResourceId, const CString& strFmt1 )
+{
+	CString str;
+
+	AfxFormatString1( str, nResourceId, strFmt1 );
+
+	zfcLogger::instance().write( _T("%s\n"), str );
+}
+
+//	ログ出力する
+void zfcUtility::writeLog2( int nResourceId, const CString& strFmt1, const CString& strFmt2 )
+{
+	CString str;
+
+	AfxFormatString2( str, nResourceId, strFmt1, strFmt2 );
+
+	zfcLogger::instance().write( _T("%s\n"), str );
+}
+
+//	ファイル名をログ出力出力する
+void zfcUtility::writeFileName( const zfc::pathContainer& conPath )
+{
+	zfc::for_each( conPath, [](zfc::pathContainer::const_reference pair){  zfcLogger::instance().write( _T("%s\r\n"), pair.first + _T(".dwg") ); } );
+}
+
+//	ファイルパスからファイル名を返す
+CString zfcUtility::fileName( const CString& strPath )
+{
+	TCHAR szPath[_MAX_PATH];
+	TCHAR szName[_MAX_FNAME];
+	TCHAR szExt[_MAX_EXT];
+
+	_tsplitpath( strPath, NULL, NULL, szName, szExt );
+	_tmakepath( szPath, NULL, NULL, szName, szExt ); 
+	
+	return szPath;
+}
+
