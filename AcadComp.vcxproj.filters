@@ -126,6 +126,9 @@
     <ClCompile Include="zfcCmdCompareDwgInFolder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="zfcDlgSelectFolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="AcadComp.def">
@@ -272,6 +275,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="zfcCmdCompareDwgInFolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zfcDlgSelectFolder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

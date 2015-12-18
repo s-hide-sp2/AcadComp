@@ -193,5 +193,6 @@ extern HINSTANCE _hdllInstance ;
 // Include this here to speed up the compile times
 #include "stdarx.h"
 #include "StdZfc.h"
+#include <afxcontrolbars.h>
 
 #endif // !defined(AFX_STDAFX_H__0B096B40_CC6C_468B_A65F_CD8DCACE5233__INCLUDED)

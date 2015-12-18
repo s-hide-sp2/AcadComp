@@ -123,6 +123,25 @@ BEGIN
     LTEXT           "許容誤差",IDC_STATIC,7,8,31,11
 END
 
+IDD_DLG_SEL_FOLDER DIALOGEX 0, 0, 376, 166
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "図面一括比較"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "実行(&E)",IDEXECUTE,256,145,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,319,145,50,14
+    GROUPBOX        "図面フォルダ",IDC_STATIC,7,7,362,128
+    PUSHBUTTON      "...",IDC_BTN_FOLDER_OLD_DWG,348,20,21,14
+    LTEXT           "旧図面(&O):",IDC_STATIC,9,23,38,8
+    EDITTEXT        IDC_EDT_FOLDER_OLD_DWG,7,35,362,14,ES_AUTOHSCROLL
+    LTEXT           "新図面(&N):",IDC_STATIC,9,57,38,8
+    PUSHBUTTON      "...",IDC_BTN_FOLDER_NEW_DWG,348,55,21,14
+    EDITTEXT        IDC_EDT_FOLDER_NEW_DWG,7,70,362,14,ES_AUTOHSCROLL
+    LTEXT           "合成図面(&C):",IDC_STATIC,9,93,46,8
+    PUSHBUTTON      "...",IDC_BTN_FOLDER_COMPOUND_DWG,348,90,21,14
+    EDITTEXT        IDC_EDT_FOLDER_COMPOUND_DWG,7,105,362,14,ES_AUTOHSCROLL
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -146,6 +165,14 @@ BEGIN
         RIGHTMARGIN, 114
         TOPMARGIN, 7
         BOTTOMMARGIN, 50
+    END
+
+    IDD_DLG_SEL_FOLDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 369
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -195,6 +222,7 @@ BEGIN
     IDS_NEW_DWG_FOLDER      "新図面フォルダ：%1\r\n"
     IDS_CORRESPOND          "一致：%1 %2\r\n"
     IDS_DISCORD             "不一致：%1 %2\r\n"
+    IDS_INVALID_FOLDER      "無効なフォルダです。"
 END
 
 #endif    // 日本語 (日本) resources

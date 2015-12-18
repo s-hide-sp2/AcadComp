@@ -13,6 +13,7 @@
 #define IDS_NEW_DWG_FOLDER              108
 #define IDS_CORRESPOND                  109
 #define IDS_DISCORD                     110
+#define IDS_INVALID_FOLDER              111
 #define IDC_LIST_GRID                   200
 #define IDD_DLG_COMP                    200
 #define IDC_CBO_DWG_LIST1               201
@@ -25,6 +26,7 @@
 #define IDC_BTN_REF1                    205
 #define IDI_RES_ONLY1                   205
 #define IDI_RES_ONLY2                   206
+#define IDD_DLG_SEL_FOLDER              207
 #define IDC_BTN_REF2                    208
 #define IDC_EDIT_TOL                    208
 #define IDC_LBL2                        209
@@ -38,16 +40,23 @@
 #define IDC_CHK_RECTCOMP                218
 #define IDC_STAT_COMP                   219
 #define IDC_STAT_CSV                    220
+#define IDC_EDT_FOLDER_OLD_DWG          221
 #define IDC_BTN_CSV2                    222
+#define IDC_BTN_FOLDER_OLD_DWG          222
+#define IDC_EDT_FOLDER_NEW_DWG          223
+#define IDC_BTN_FOLDER_NEW_DWG          224
+#define IDC_EDT_FOLDER_COMPOUND_DWG     225
+#define IDC_BTN_FOLDER_COMPOUND_DWG     226
+#define IDEXECUTE                       227
 #define ID_MNU_SETTING                  32768
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        207
+#define _APS_NEXT_RESOURCE_VALUE        208
 #define _APS_NEXT_COMMAND_VALUE         32769
-#define _APS_NEXT_CONTROL_VALUE         221
+#define _APS_NEXT_CONTROL_VALUE         228
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

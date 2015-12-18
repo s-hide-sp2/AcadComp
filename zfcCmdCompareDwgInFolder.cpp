@@ -4,6 +4,7 @@
 #include "zfcUtility.h"
 #include "zfcLogger.h"
 #include "zfcComparetor.h"
+#include "zfcDlgSelectFolder.h"
 
 zfcCmdCompareDwgInFolder::zfcCmdCompareDwgInFolder(void)
 {
@@ -19,8 +20,9 @@ bool zfcCmdCompareDwgInFolder::execute()
 	zfc::pathContainer conPathOld;
 	zfc::pathContainer conPathNew;
 
-	//	フォルダ選択ダイアログ
-
+	//	各種フォルダを選択する
+	if( !selectFolder() )
+		return true;
 
 	VERIFY( zfcLogger::instance().open( zfcUtility::filePath( folderOutput(), zfcUtility::logFileName() ) ) );
 
@@ -39,6 +41,25 @@ bool zfcCmdCompareDwgInFolder::execute()
 
 	// 新図面フォルダにしかないファイル情報をログ出力
 	writeLogOnlyExistInNewDwgFolder();
+
+	return true;
+}
+
+//	各種フォルダを選択する
+bool zfcCmdCompareDwgInFolder::selectFolder()
+{
+	auto& dlg = zfcDlgSelectFolder::instance();
+	bool bSelect = false;
+
+	//	フォルダ選択ダイアログ
+	if( dlg.DoModal() == IDOK ){
+		m_strFolderOldDwg = dlg.folderOldDwg();
+		m_strFolderNewDwg = dlg.folderNewDwg();
+		m_strFolderOutput = dlg.folderCompoundDwg();
+		bSelect = true;
+	}
+
+	return bSelect;
 }
 
 //	フォルダ下の図面ファイルを取得

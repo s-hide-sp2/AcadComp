@@ -24,6 +24,9 @@ public:
 	const CString& folderOutput() const;
 
 protected:
+	//	各種フォルダを選択する
+	bool selectFolder();
+
 	//	フォルダ下の図面ファイルを取得
 	void getDwgInFoder( zfc::pathContainer& conPath, const CString& strFolder ) const;
 
