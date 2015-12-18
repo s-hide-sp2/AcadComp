@@ -24,18 +24,26 @@ public:
 	const CString& folderOutput() const;
 
 protected:
-
+	//	フォルダ下の図面ファイルを取得
 	void getDwgInFoder( zfc::pathContainer& conPath, const CString& strFolder ) const;
 
+	//	ファイルパスを検出
 	bool findPath( zfc::pathContainer::const_iterator itPath, const CString& strFind, const zfc::pathContainer& conPath ) const;
 
+	//	図面を比較する
 	void compare( zfc::pathContainer::const_reference pairNew, const zfc::pathContainer& conPathOld ) const;
 
+	//	処理済み図面を追加
 	void addProcessed( const CString& strTitle, const CString& strPath );
 	
+	//	未処理図面を追加
 	void addUnProcessed( const CString& strTitle, const CString& strPath );
 
-	void writeLogOnlyExistInNewDwgFolder();
+	// 旧図面フォルダにしかないファイル情報をログ出力
+	void writeLogOnlyExistInOldDwgFolder(zfc::pathContainer& conPathOld) const;
+
+	// 新図面フォルダにしかないファイル情報をログ出力
+	void writeLogOnlyExistInNewDwgFolder() const;
 
 private:
 	//	旧図面格納フォルダ
@@ -52,7 +60,6 @@ private:
 
 	//	未処理ファイル
 	zfc::pathContainer m_conUnProcessed;
-
 };
 
 inline void zfcCmdCompareDwgInFolder::setFolderOldDwg(const CString& value )

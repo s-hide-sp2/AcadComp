@@ -8,6 +8,11 @@
 #define IDS_FAIL_TO_COMPARE_DWG         103
 #define IDS_FAIL_TO_COMPOUND_DWG        104
 #define IDS_ONLY_EXIST_NEW_DWG_FOLDER   105
+#define IDS_ONLY_EXIST_OLD_DWG_FOLDER   106
+#define IDS_OLD_DWG_FOLDER              107
+#define IDS_NEW_DWG_FOLDER              108
+#define IDS_CORRESPOND                  109
+#define IDS_DISCORD                     110
 #define IDC_LIST_GRID                   200
 #define IDD_DLG_COMP                    200
 #define IDC_CBO_DWG_LIST1               201

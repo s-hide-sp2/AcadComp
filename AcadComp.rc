@@ -185,11 +185,16 @@ IDI_RES_ONLY2           ICON                    "res_only2.ico"
 STRINGTABLE
 BEGIN
     IDS_PROJNAME            "AcadComp"
-    IDS_FAIL_TO_READ_DWG    "図面の読み込みに失敗しました。%1"
-    IDS_FAIL_TO_GET_ID      "図面内要素の取得に失敗しました。%1"
-    IDS_FAIL_TO_COMPARE_DWG "図面の比較に失敗しました。\r\n%1\r\n%2"
-    IDS_FAIL_TO_COMPOUND_DWG "図面の合成に失敗しました。\r\n%1\r\n%2"
-    IDS_ONLY_EXIST_NEW_DWG_FOLDER "以下のファイルは旧図面フォルダに存在しませんでした\n"
+    IDS_FAIL_TO_READ_DWG    "図面の読み込みに失敗：%1\r\n"
+    IDS_FAIL_TO_GET_ID      "図面内要素の取得に失敗：%1\r\n"
+    IDS_FAIL_TO_COMPARE_DWG "図面の比較に失敗：%1 %2\r\n"
+    IDS_FAIL_TO_COMPOUND_DWG "図面の合成に失敗：%1 %2\r\n"
+    IDS_ONLY_EXIST_NEW_DWG_FOLDER "以下のファイルは旧図面フォルダに存在しませんでした\r\n"
+    IDS_ONLY_EXIST_OLD_DWG_FOLDER "以下のファイルは新図面フォルダに存在しませんでした\r\n"
+    IDS_OLD_DWG_FOLDER      "旧図面フォルダ：%1\r\n"
+    IDS_NEW_DWG_FOLDER      "新図面フォルダ：%1\r\n"
+    IDS_CORRESPOND          "一致：%1 %2\r\n"
+    IDS_DISCORD             "不一致：%1 %2\r\n"
 END
 
 #endif    // 日本語 (日本) resources
