@@ -15,6 +15,7 @@
 #define IDS_DISCORD                     110
 #define IDS_INVALID_FOLDER              111
 #define IDS_OLD_DWG_TIMESTAMP_IS_NEW    112
+#define IDS_COMPLETE_COMPARE_DWG        113
 #define IDC_LIST_GRID                   200
 #define IDD_DLG_COMP                    200
 #define IDC_CBO_DWG_LIST1               201

@@ -24,24 +24,32 @@ bool zfcCmdCompareDwgInFolder::execute()
 	if( !selectFolder() )
 		return true;
 
-	VERIFY( zfcLogger::instance().open( zfcUtility::filePath( folderOutput(), zfcUtility::logFileName() ) ) );
+	CString strLogPath = zfcUtility::filePath( folderOutput(), zfcUtility::logFileName() );
 
-	zfcUtility::writeLog1( IDS_OLD_DWG_FOLDER, folderOldDwg() );
-	zfcUtility::writeLog1( IDS_NEW_DWG_FOLDER, folderNewDwg() );
+	{
+		CWaitCursor wait;
+		VERIFY( zfcLogger::instance().open( strLogPath ) );
 
-	//	フォルダ下のファイル情報取得
-	getDwgInFoder( conPathOld, folderOldDwg() );
-	getDwgInFoder( conPathNew, folderNewDwg() );
+		zfcUtility::writeLog1( IDS_OLD_DWG_FOLDER, folderOldDwg() );
+		zfcUtility::writeLog1( IDS_NEW_DWG_FOLDER, folderNewDwg() );
 
-	// 比較実行
-	zfc::for_each( conPathNew, [=](zfc::pathContainer::const_reference pairNew){ compare( pairNew, conPathOld ); } );
+		//	フォルダ下のファイル情報取得
+		getDwgInFoder( conPathOld, folderOldDwg() );
+		getDwgInFoder( conPathNew, folderNewDwg() );
 
-	// 旧図面フォルダにしかないファイル情報をログ出力
-	writeLogOnlyExistInOldDwgFolder( conPathOld );
+		// 比較実行
+		zfc::for_each( conPathNew, [=](zfc::pathContainer::const_reference pairNew){ compare( pairNew, conPathOld ); } );
 
-	// 新図面フォルダにしかないファイル情報をログ出力
-	writeLogOnlyExistInNewDwgFolder();
+		// 旧図面フォルダにしかないファイル情報をログ出力
+		writeLogOnlyExistInOldDwgFolder( conPathOld );
 
+		// 新図面フォルダにしかないファイル情報をログ出力
+		writeLogOnlyExistInNewDwgFolder();
+	}
+
+	AfxMessageBox( IDS_COMPLETE_COMPARE_DWG );
+	::ShellExecute( AfxGetMainWnd()->GetSafeHwnd(), _T("open"), strLogPath, NULL, folderOutput(), SW_SHOWNORMAL );
+	
 	return true;
 }
 
