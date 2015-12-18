@@ -13,6 +13,8 @@ public:
 	Acad::ErrorStatus execute( const CString& strPathOldDwg, const CString strPathNewDwg );
 
 protected:
+	//	ファイル状態(更新日時・サイズ)で比較
+	bool compareFileStatus( const CString& strPathOldDwg, const CString strPathNewDwg ) const;
 
 	bool readDwg( AcDbDatabase*& pDb, const CString& strPath ) const;
 

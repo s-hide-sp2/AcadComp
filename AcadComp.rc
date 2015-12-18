@@ -225,6 +225,11 @@ BEGIN
     IDS_INVALID_FOLDER      "無効なフォルダです。"
 END
 
+STRINGTABLE
+BEGIN
+    IDS_OLD_DWG_TIMESTAMP_IS_NEW "旧図面のファイル更新日時の方が新図面ファイルより新しい：%1 %2"
+END
+
 #endif    // 日本語 (日本) resources
 /////////////////////////////////////////////////////////////////////////////
 

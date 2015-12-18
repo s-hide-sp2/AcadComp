@@ -26,6 +26,10 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 	ResultCompEntity resultCompEntity;
 	ACDocManager docManager;
 
+	//	ファイル状態(更新日時・サイズ)で比較
+	if( !compareFileStatus(strPathOldDwg, strPathNewDwg) )
+		return true;
+
 	//	新・旧図面読み込み
 	bResult = readDwg( pDbOld, strPathOldDwg );
 	if( bResult )
@@ -66,6 +70,28 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 	delete pDbNew;
 
 	return bResult;
+}
+
+//	ファイル状態(更新日時・サイズ)で比較
+bool zfcComparetor::compareFileStatus( const CString& strPathOldDwg, const CString strPathNewDwg ) const
+{
+	bool bContinue = true;
+	CFileStatus fileStatusOld;
+	CFileStatus fileStatusNew;
+
+	VERIFY( CFile::GetStatus( strPathOldDwg, fileStatusOld ) );
+	VERIFY( CFile::GetStatus( strPathNewDwg, fileStatusNew ) );
+
+	if( fileStatusOld.m_mtime == fileStatusNew.m_mtime && fileStatusOld.m_size == fileStatusNew.m_size ){
+		zfcUtility::writeLog2( IDS_CORRESPOND, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
+		bContinue = false;
+	}
+	else if( fileStatusNew.m_mtime < fileStatusOld.m_mtime ){
+		zfcUtility::writeLog2( IDS_OLD_DWG_TIMESTAMP_IS_NEW, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
+		bContinue = false;
+	}
+
+	return bContinue;
 }
 
 bool zfcComparetor::readDwg( AcDbDatabase*& pDb, const CString& strPath ) const
