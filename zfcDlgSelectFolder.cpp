@@ -24,6 +24,7 @@ zfcDlgSelectFolder::~zfcDlgSelectFolder()
 {
 }
 
+//	シングルトンオブジェクトを返す
 zfcDlgSelectFolder& zfcDlgSelectFolder::instance()
 {
 	static zfcDlgSelectFolder sigleton;
@@ -55,6 +56,7 @@ BOOL zfcDlgSelectFolder::checkFolder( int nEditCtrlID ) const
 	return bResult;
 }
 
+//	フォルダを選択する
 BOOL zfcDlgSelectFolder::selectFolder( CString& strSelFolder, const CString& strIniFolder )
 {
 	auto pWinApp = reinterpret_cast<CWinAppEx*>( AfxGetApp() );
@@ -82,7 +84,7 @@ END_MESSAGE_MAP()
 
 // zfcDlgSelectFolder メッセージ ハンドラー
 
-
+//	旧図面フォルダ選択ボタンクリック
 void zfcDlgSelectFolder::OnBnClickedBtnFolderOldDwg()
 {
 	if( selectFolder(m_strFolderOldDwg, m_strFolderOldDwg) ){
@@ -90,6 +92,7 @@ void zfcDlgSelectFolder::OnBnClickedBtnFolderOldDwg()
 	}
 }
 
+//	新図面フォルダ選択ボタンクリック
 void zfcDlgSelectFolder::OnBnClickedBtnFolderNewDwg()
 {
 	if( selectFolder(m_strFolderNewDwg, m_strFolderNewDwg) ){
@@ -97,7 +100,7 @@ void zfcDlgSelectFolder::OnBnClickedBtnFolderNewDwg()
 	}
 }
 
-
+//	合成図面フォルダ選択ボタンクリック
 void zfcDlgSelectFolder::OnBnClickedBtnFolderCompoundDwg()
 {
 	if( selectFolder(m_strFolderCompoundDwg, m_strFolderCompoundDwg) ){
@@ -105,7 +108,7 @@ void zfcDlgSelectFolder::OnBnClickedBtnFolderCompoundDwg()
 	}
 }
 
-
+//	実行ボタンクリック
 void zfcDlgSelectFolder::OnBnClickedExecute()
 {
 	int nEdtCtrIds[] = { IDC_EDT_FOLDER_OLD_DWG, IDC_EDT_FOLDER_NEW_DWG, IDC_EDT_FOLDER_COMPOUND_DWG };

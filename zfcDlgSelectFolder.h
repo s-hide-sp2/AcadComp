@@ -1,8 +1,10 @@
 #pragma once
 
 
-// zfcDlgSelectFolder ダイアログ
-
+/**
+ * 図面比較実行ダイアログ
+ * 
+ */
 class zfcDlgSelectFolder : public CDialogEx
 {
 	DECLARE_DYNAMIC(zfcDlgSelectFolder)
@@ -11,6 +13,7 @@ public:
 	zfcDlgSelectFolder(CWnd* pParent = NULL);   // 標準コンストラクター
 	virtual ~zfcDlgSelectFolder();
 
+	//	シングルトンオブジェクトを返す
 	static zfcDlgSelectFolder& instance();
 
 	///////////////////////////////////////////////////////
@@ -27,19 +30,27 @@ public:
 private:
 	//	フォルダの存在チェック
 	BOOL checkFolder( int nEditCtrlID ) const;
+
+	//	フォルダを選択する
 	BOOL selectFolder( CString& strSelFolder, const CString& strIniFolder );
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV サポート
 
 	DECLARE_MESSAGE_MAP()
+
+private:
+	//	旧図面フォルダ
+	CString m_strFolderOldDwg;
+
+	//	新図面フォルダ
+	CString m_strFolderNewDwg;
+
+	//	合成図面フォルダ
+	CString m_strFolderCompoundDwg;
+
 public:
 	afx_msg void OnBnClickedBtnFolderOldDwg();
-private:
-	CString m_strFolderOldDwg;
-	CString m_strFolderNewDwg;
-	CString m_strFolderCompoundDwg;
-public:
 	afx_msg void OnBnClickedBtnFolderNewDwg();
 	afx_msg void OnBnClickedBtnFolderCompoundDwg();
 	afx_msg void OnBnClickedExecute();
