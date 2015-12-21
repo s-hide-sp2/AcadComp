@@ -16,6 +16,7 @@ namespace zfc{
 		}
 	};
 
+	//大文字と小文字を区別せずに2つの文字列を比較する関数オブジェクト
 	struct lessNocase {
 		bool operator()(const CString& x, const CString& y) const {
 			return ( x.CompareNoCase(y) < 0 );
@@ -30,13 +31,10 @@ namespace zfc{
 
 	//	パスコンテナタイプ定義(key=ファイルタイトル, value=ファイルパス)
 	typedef std::map<CString, CString, lessNocase> pathContainer;
-
-
+	
 	// for_each の引数を簡略化するテンプレート関数
 	template <typename T_container, typename T_function>
 	T_function for_each(T_container& rcontainer, T_function function) {
 		return std::for_each(rcontainer.begin(), rcontainer.end(), function);
 	}
-
-
 };
