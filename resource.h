@@ -21,6 +21,7 @@
 #define IDS_RESULT_DISCORD              116
 #define IDS_RESULT_WARNING              117
 #define IDS_RESULT_ERROR                118
+#define IDS_UNKNOWN_ERROR               119
 #define IDC_LIST_GRID                   200
 #define IDD_DLG_COMP                    200
 #define IDC_CBO_DWG_LIST1               201

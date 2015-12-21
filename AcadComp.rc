@@ -234,6 +234,7 @@ BEGIN
     IDS_RESULT_DISCORD      "不一致 %1"
     IDS_RESULT_WARNING      "警告 %1"
     IDS_RESULT_ERROR        "失敗 %1"
+    IDS_UNKNOWN_ERROR       "原因不明のエラーが発生しました。"
 END
 
 #endif    // 日本語 (日本) resources
