@@ -48,6 +48,9 @@ protected:
 	// 新図面フォルダにしかないファイル情報をログ出力
 	void writeLogOnlyExistInNewDwgFolder() const;
 
+	// 比較結果をログ出力する
+	void writeLogResult() const;
+
 private:
 	//	旧図面格納フォルダ
 	CString m_strFolderOldDwg;

@@ -26,6 +26,9 @@ bool zfcCmdCompareDwgInFolder::execute()
 
 	CString strLogPath = zfcUtility::filePath( folderOutput(), zfcUtility::logFileName() );
 
+	//	比較オブジェクト初期化
+	zfcComparetor::instance().init();
+
 	{
 		CWaitCursor wait;
 		VERIFY( zfcLogger::instance().open( strLogPath ) );
@@ -47,7 +50,12 @@ bool zfcCmdCompareDwgInFolder::execute()
 		writeLogOnlyExistInNewDwgFolder();
 	}
 
+	//	比較結果をログ出力
+	writeLogResult();
+
 	AfxMessageBox( IDS_COMPLETE_COMPARE_DWG );
+	
+	//	ログファイルを表示
 	::ShellExecute( AfxGetMainWnd()->GetSafeHwnd(), _T("open"), strLogPath, NULL, folderOutput(), SW_SHOWNORMAL );
 	
 	return true;
@@ -116,10 +124,9 @@ void zfcCmdCompareDwgInFolder::compare( zfc::pathContainer::const_reference pair
 	const CString& strTitleNew = pairNew.first;
 	zfc::pathContainer::const_iterator itOld;
 	bool bFind = findPath( itOld, strTitleNew, conPathOld );
-	zfcComparetor comparetor;
 
 	if( bFind ){
-		auto es = comparetor.execute( itOld->second, pairNew.second );
+		auto es = zfcComparetor::instance().execute( itOld->second, pairNew.second );
 		assert( Acad::eOk == es );
 		addProcessed( itOld->first, itOld->second );
 	}
@@ -145,4 +152,24 @@ void zfcCmdCompareDwgInFolder::writeLogOnlyExistInNewDwgFolder() const
 {
 	zfcUtility::writeLog1( IDS_ONLY_EXIST_NEW_DWG_FOLDER, _T("") );
 	zfcUtility::writeFileName( m_conUnProcessed );
+}
+
+// 比較結果をログ出力する
+void zfcCmdCompareDwgInFolder::writeLogResult() const
+{
+	auto& comparetor = zfcComparetor::instance();
+	CString strCorrespond;
+	CString strDiscord;
+	CString strWarning;
+	CString strError;
+	CString strResult;
+	
+	AfxFormatString1( strCorrespond, IDS_RESULT_CORRESPOND, std::to_wstring(comparetor.cntCorrespond()).c_str() );
+	AfxFormatString1( strDiscord, IDS_RESULT_DISCORD, std::to_wstring(comparetor.cntDiscord()).c_str() );
+	AfxFormatString1( strWarning, IDS_RESULT_WARNING, std::to_wstring(comparetor.cntWarning()).c_str() );
+	AfxFormatString1( strError, IDS_RESULT_ERROR, std::to_wstring(comparetor.cntError()).c_str() );
+
+	strResult.Format( _T("%s %s %s %s"), strCorrespond, strDiscord, strWarning, strError );
+
+	zfcUtility::writeLog1( IDS_COMPARE_RESULT, strResult );
 }

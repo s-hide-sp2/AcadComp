@@ -229,6 +229,11 @@ STRINGTABLE
 BEGIN
     IDS_OLD_DWG_TIMESTAMP_IS_NEW "旧図面のファイル更新日時の方が新図面ファイルより新しい：%1 %2"
     IDS_COMPLETE_COMPARE_DWG "図面の比較が終了しました。"
+    IDS_COMPARE_RESULT      "\r\n========== 比較結果: %1 =========="
+    IDS_RESULT_CORRESPOND   "一致 %1"
+    IDS_RESULT_DISCORD      "不一致 %1"
+    IDS_RESULT_WARNING      "警告 %1"
+    IDS_RESULT_ERROR        "失敗 %1"
 END
 
 #endif    // 日本語 (日本) resources

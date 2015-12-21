@@ -8,11 +8,29 @@
 
 zfcComparetor::zfcComparetor(void)
 {
+	init();
 }
 
 
 zfcComparetor::~zfcComparetor(void)
 {
+}
+
+//	シングルトンオブジェクトを返す
+zfcComparetor& zfcComparetor::instance()
+{
+	static zfcComparetor sigleton;
+
+	return sigleton;
+}
+
+//	初期化処理
+void zfcComparetor::init()
+{
+	m_nCntCorrespond = 0;
+	m_nCntDiscord = 0;
+	m_nCntWarning = 0;
+	m_nCntError = 0;
 }
 
 //	図面比較を行う
@@ -47,10 +65,14 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 		bResult = docManager.CompDwgs( conObjectIdOld, conObjectIdNew, resultCompEntity );
 		
 		if( bResult ){
-			if( resultCompEntity.GetCount() == 0 )
+			if( resultCompEntity.GetCount() == 0 ){
+				incrementCorrespond();
 				zfcUtility::writeLog2( IDS_CORRESPOND, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
-			else
+			}
+			else{
+				incrementDiscord();
 				zfcUtility::writeLog2( IDS_DISCORD, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
+			}
 		}
 		else{
 			zfcUtility::writeLog2( IDS_FAIL_TO_COMPARE_DWG, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
@@ -65,6 +87,9 @@ bool zfcComparetor::execute( const CString& strPathOldDwg, const CString strPath
 			zfcUtility::writeLog2( IDS_FAIL_TO_COMPOUND_DWG, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
 		}
 	}
+
+	if( !bResult )
+		incrementError();
 
 	delete pDbOld;
 	delete pDbNew;
@@ -83,10 +108,12 @@ bool zfcComparetor::compareFileStatus( const CString& strPathOldDwg, const CStri
 	VERIFY( CFile::GetStatus( strPathNewDwg, fileStatusNew ) );
 
 	if( fileStatusOld.m_mtime == fileStatusNew.m_mtime && fileStatusOld.m_size == fileStatusNew.m_size ){
+		incrementCorrespond();
 		zfcUtility::writeLog2( IDS_CORRESPOND, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
 		bContinue = false;
 	}
 	else if( fileStatusNew.m_mtime < fileStatusOld.m_mtime ){
+		incrementWarning();
 		zfcUtility::writeLog2( IDS_OLD_DWG_TIMESTAMP_IS_NEW, zfcUtility::fileName(strPathOldDwg), zfcUtility::fileName(strPathNewDwg) );
 		bContinue = false;
 	}
@@ -94,6 +121,7 @@ bool zfcComparetor::compareFileStatus( const CString& strPathOldDwg, const CStri
 	return bContinue;
 }
 
+//	図面読み込み
 bool zfcComparetor::readDwg( AcDbDatabase*& pDb, const CString& strPath ) const
 {
 	bool bResult = true;
@@ -107,6 +135,7 @@ bool zfcComparetor::readDwg( AcDbDatabase*& pDb, const CString& strPath ) const
 	return bResult;
 }
 
+//	図面内要素のオブジェクトID取得
 bool zfcComparetor::getAllObjectId( acd::objectIdContainer& conObjectId, AcDbDatabase* pDb ) const
 {
 	bool bResult = true;
@@ -120,3 +149,4 @@ bool zfcComparetor::getAllObjectId( acd::objectIdContainer& conObjectId, AcDbDat
 	
 	return bResult;
 }
+
