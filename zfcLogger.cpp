@@ -39,9 +39,12 @@ bool zfcLogger::open( const CString& strPath )
 bool zfcLogger::close()
 {
 	bool bResult = true;
+
 	if( nullptr != m_fp ){
 		if( fclose(m_fp) != 0 )
 			bResult = false;
+		
+		m_fp = nullptr;
 	}
 
 	return bResult;

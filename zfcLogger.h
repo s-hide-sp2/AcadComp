@@ -1,4 +1,9 @@
 #pragma once
+
+/**
+ * ログ出力クラス
+ * 
+ */
 class zfcLogger
 {
 public:
