@@ -11,6 +11,7 @@ zfcUtility::~zfcUtility(void)
 {
 }
 
+//	図面を読み込む
 Acad::ErrorStatus zfcUtility::readDwg( AcDbDatabase*& pDb, const CString& strPath )
 {
 	Acad::ErrorStatus es = Acad::eOk;
@@ -46,6 +47,8 @@ Acad::ErrorStatus zfcUtility::getAllObjectId( acd::objectIdContainer& conObjectI
 		
 	return es;
 }
+
+//	図面内の全要素を取得する
 Acad::ErrorStatus zfcUtility::getAllEntity( zfc::entityContainer& conEntity, AcDbDatabase* pDb, AcDb::OpenMode mode )
 {
 	Acad::ErrorStatus es = Acad::eOk;
@@ -79,6 +82,7 @@ Acad::ErrorStatus zfcUtility::getAllEntity( zfc::entityContainer& conEntity, AcD
 	return es;
 }
 
+//	ブロックテーブルレコード内の全要素を取得する
 Acad::ErrorStatus zfcUtility::getAllEntity( zfc::entityContainer& conEntity, AcDbBlockTableRecord* pBlkRec, AcDb::OpenMode mode )
 {
 	Acad::ErrorStatus es = Acad::eOk;
@@ -143,6 +147,7 @@ Acad::ErrorStatus zfcUtility::getAllAttribute( zfc::entityContainer& conEntity, 
 	return es;
 }
 
+//	ログファイル名を返す
 CString zfcUtility::logFileName()
 {
 	static CString LOG_FILE_NAME( _T("CompareResult.log") );
@@ -150,6 +155,7 @@ CString zfcUtility::logFileName()
 	return LOG_FILE_NAME;
 }
 
+//	ファイルパスを返す
 CString zfcUtility::filePath( const CString& strFolderPath, const CString& strFileName, const CString& strExt = _T("") )
 {
 	TCHAR szPath[MAX_PATH];
